@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.Master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+               
+                <img src="../Images/Real.png" height="160px" width="280px"/>
+            </div>
+            <div class="loginDisplay">
+            <a href="Logout.aspx" style="text-decoration:none; " >Logout</a>    
+            <br />
+          <h1 style="padding-right:200px;">Real Estate</h1>
+            
+            </div>
+            <div class="ClearArea">
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem  Text="User">
+                        
+                            <asp:MenuItem Text="Register New User" Value="Register New User" 
+                                NavigateUrl="~/Admin/ReceiptForm.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Edit User" Value="Edit User" 
+                                NavigateUrl="~/Admin/EditUser.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Delete User" Value="Delete User" 
+                                NavigateUrl="~/Admin/ChngeCustomerStatus.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        
+                        <asp:MenuItem  Text="Employee">
+                            <asp:MenuItem Text="Create Employee" Value="Create Employee" 
+                                NavigateUrl="~/Admin/New Employee Entry.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Edit Employee" Value="Edit Employee" 
+                                NavigateUrl="~/Admin/EditEmployeeDetail.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Delete Employee" Value="Delete Employee" 
+                                NavigateUrl="~/Admin/Delete Employee.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem  Text="Plan">
+                        <asp:MenuItem NavigateUrl="~/Admin/PlanCreate.aspx" Text="New Plan"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/PlanEdit.aspx" Text="Edit Plan"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/PlanDelete.aspx" Text="Delete Plan"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/PlanWiseUser.aspx" Text="Plan wise User"/>
+                        </asp:MenuItem>
+
+                        
+                        <asp:MenuItem NavigateUrl="~/Admin/ReceiptForm.aspx" Text="Receipt"/>
+                        <asp:MenuItem NavigateUrl="~/manager/ReceiptForm.aspx" Text="Change" 
+                            Value="Change">
+                            <asp:MenuItem NavigateUrl="~/Admin/ChngeCustomerStatus.aspx" 
+                                Text="Customer Status" Value="Customer Status"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ChangePassword.aspx" Text="Password" 
+                                Value="Password"></asp:MenuItem>
+                        </asp:MenuItem>
+
+
+                    </Items>
+                </asp:Menu>
+            </div>
+
+        </div>
+
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
